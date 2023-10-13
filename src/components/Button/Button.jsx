@@ -11,7 +11,7 @@ export const Button = ({ primary, backgroundColor, size, label, disabled, ...pro
     ? "storybook-button--primary"
     : "storybook-button--secondary";
 
-
+  
 
   return (
     <button
