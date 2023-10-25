@@ -17,7 +17,7 @@ export const Checkbox = ({ label, checked, disabled }) => {
         position: "relative",
         alignItems: "center",
         gap: "10px",
-        cursor: "pointer"
+        cursor: "pointer",
       }}
       onClick={toggleCheckbox}
     >
@@ -38,9 +38,20 @@ export const Checkbox = ({ label, checked, disabled }) => {
           cursor: "pointer",
         }}
       >
-        {isChecked && ( 
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ position: "absolute", top: "2px", left: "2px" }} xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.01465 3.5L3.01465 5.5L8.01465 0.5" stroke="white" stroke-width="1.25"/>
+        {isChecked && (
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            style={{ position: "absolute", top: "2px", left: "2px" }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.01465 3.5L3.01465 5.5L8.01465 0.5"
+              stroke="white"
+              stroke-width="1.25"
+            />
           </svg>
           // <svg
           //   xmlns="http://www.w3.org/2000/svg"
