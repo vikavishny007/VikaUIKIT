@@ -1,7 +1,13 @@
 @import url("../variables.css");
 
+body {
+    font-family: 'Inter';
+    /* другие глобальные стили */
+}
+
+
 .typography{
-    font-family: "Inter", sans-serif;
+    font-family: "Inter";
     line-height: 16px;
 }
 

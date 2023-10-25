@@ -1,30 +1,103 @@
+@import url("../variables.css");
+@import url("../Typography/typography.css");
+
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
+  /* О шрифте*/
+  font-family: 'Inter';
+  font-size: 11.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 139.13% */
+  letter-spacing: -0.115px;
+  color: var(--text1);
+  /* О форме*/
+  border-radius: var(--border-radius, 4px);
   cursor: pointer;
   display: inline-block;
-  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  position: relative;
+  background: var(--action-action-secondary-background);
+  box-shadow: var(--boxShadows-action-secondary);
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
 }
+
 .storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+  background: var(--actionPrimaryBackground);
+  color: var(--actionPrimaryText);
 }
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+.storybook-button--danger {
+  background: var(--redBackground);
+  color: var(--actionPrimaryText);
 }
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+
+.storybook-button--outline {
+  background: none;
+  box-shadow: none;
+  border: 1px solid var(--actionSecondaryBorder);
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+.storybook-button--ghost {
+  background: none;
+  box-shadow: none;
+  border: none;
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+
+/* а сейчас будет ховер */
+.storybook-button:hover {
+  background: var(--action-action-secondary-background-hover, linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.16) 100%));
 }
+
+.storybook-button--primary:hover {
+  background: var(--actionPrimaryBackgroundHover);
+}
+
+.storybook-button--danger:hover {
+  background: var(--redBackgroundHover);
+}
+
+.storybook-button--outline:hover {
+  background: var(--background2);
+  border: 1px solid var(--actionSecondaryBorderHover);
+}
+
+.storybook-button--ghost:hover {
+  background: var(--action-action-secondary-background-hover, linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.16) 100%));
+}
+
+/* а сейчас будет фокус */
+.storybook-button:focus::before {
+  content: '';
+  width: 105%;
+  height: 109%;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border: 1px solid var(--blueBorder);
+  border-radius: 6px;
+}
+
+.storybook-button--outline:focus {
+border: none;
+}
+
+
+/* а сейчас будет дизейблед */
+.storybook-button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed; 
+}
+
+
+
+
+
+
+
