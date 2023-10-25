@@ -1,5 +1,4 @@
 @import url("../variables.css");
-@import url("../Typography/typography.css");
 
 .storybook-button {
   /* О шрифте*/
@@ -51,6 +50,7 @@
 
 /* а сейчас будет ховер */
 .storybook-button:hover {
+  /* TODO: Что это за переменная?  */
   background: var(
     --action-action-secondary-background-hover,
     linear-gradient(

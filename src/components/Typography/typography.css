@@ -1,21 +1,12 @@
 @import url("../variables.css");
 
-body {
-  font-family: "Inter";
-  /* другие глобальные стили */
-}
-
 .typography {
   font-family: "Inter";
   line-height: 16px;
 }
 
-.view_span {
-  display: inline;
-}
-
 .color_regular {
-  color: var(--textInverse);
+  color: var(--text1);
 }
 
 .variant_regularSM {
