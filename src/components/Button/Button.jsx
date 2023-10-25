@@ -5,22 +5,21 @@ import "./button.css";
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, disabled, ...props }) => {
-
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+export const Button = ({ color, size, label, disabled, ...props }) => {
 
   
+  
+    const disabledClass=disabled ? "storybook-button--disabled" : "";
+    const buttonColor=`storybook-button--${color}`;
+    const buttonSize=`storybook-button--${size}`;
 
   return (
     <button
       type="button"
       disabled={disabled}
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
+      className={["storybook-button", buttonSize, disabledClass, buttonColor].join(
         " "
       )}
-      style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {label}
@@ -29,14 +28,7 @@ export const Button = ({ primary, backgroundColor, size, label, disabled, ...pro
 };
 
 Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
+ color: PropTypes.oneOf(["basic", "primary", "danger", "outline","ghost"]),
   /**
    * How large should the button be?
    */
@@ -45,6 +37,8 @@ Button.propTypes = {
    * Button contents
    */
   label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+
   /**
    * Optional click handler
    */
@@ -52,8 +46,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
+  disabled: false,
   size: "medium",
   onClick: undefined,
+  color: "basic",
 };

@@ -38,18 +38,21 @@ export const Checkbox = ({ label, checked, disabled }) => {
           cursor: "pointer",
         }}
       >
-        {isChecked && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="white"
-            className="bi bi-check"
-            viewBox="0 0 16 16"
-            style={{ position: "absolute", top: "2px", left: "2px" }}
-          >
-            <path d="M13.293 4.293a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L7 10.586l5.293-5.293a1 1 0 0 1 1.414 0z" />
+        {isChecked && ( 
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ position: "absolute", top: "2px", left: "2px" }} xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.01465 3.5L3.01465 5.5L8.01465 0.5" stroke="white" stroke-width="1.25"/>
           </svg>
+          // <svg
+          //   xmlns="http://www.w3.org/2000/svg"
+          //   width="16"
+          //   height="16"
+          //   fill="white"
+          //   className="bi bi-check"
+          //   viewBox="0 0 16 16"
+          //   style={{ position: "absolute", top: "2px", left: "2px" }}
+          // >
+          //   <path d="M13.293 4.293a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L7 10.586l5.293-5.293a1 1 0 0 1 1.414 0z" />
+          // </svg>
         )}
       </div>
       <Typography>{label}</Typography>
