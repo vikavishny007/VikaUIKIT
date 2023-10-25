@@ -32,7 +32,7 @@ export const Checkbox = ({
       <div
         className={`checkbox-box ${
           isChecked || indeterminate ? "checked" : ""
-        }`}
+        } ${error ? "error" : ""}`}
       >
         {isChecked && !indeterminate && <div className="checkbox-checkmark" />}
         {indeterminate && <div className="checkbox-indeterminate-mark" />}
