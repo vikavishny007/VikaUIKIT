@@ -1,8 +1,8 @@
-import { Checkbox } from "../src/components";
+import { Switch } from "../src/components";
 
 export default {
-  title: "Checkbox",
-  component: Checkbox,
+  title: "Switch",
+  component: Switch,
   parameters: {
     layout: "centered",
   },
@@ -13,7 +13,6 @@ export const Regular = {
   args: {
     label: "Label",
     error: false,
-    indeterminate: false,
     checked: false,
     disabled: false,
   },

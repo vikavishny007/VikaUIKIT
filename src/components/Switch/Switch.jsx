@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Typography } from "../Typography";
 import PropTypes from "prop-types";
-import "./checkbox.css";
+import "./switch.css";
 
-export const Checkbox = ({
-  label,
-  checked,
-  disabled,
-  error,
-  indeterminate,
-  onChange,
-}) => {
+export const Switch = ({ label, checked, disabled, error, onChange }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const toggleCheckbox = () => {
+  const toggleSwitch = () => {
     if (!disabled) {
       setIsChecked(!isChecked);
 
@@ -26,37 +19,35 @@ export const Checkbox = ({
   }, [checked]);
 
   return (
-    <div className="checkbox-container" onClick={toggleCheckbox}>
+    <div className="switch-container" onClick={toggleSwitch}>
       <input
         type="checkbox"
-        className="checkbox-input"
+        className="switch-input"
         disabled={disabled}
         checked={isChecked}
-        onChange={toggleCheckbox}
+        onChange={toggleSwitch}
       />
       <div
-        className={`checkbox-box ${
-          isChecked || indeterminate ? "checked" : ""
-        } ${error ? "error" : ""}`}
+        className={`switch-box ${isChecked ? "checked" : ""} ${
+          error ? "error" : ""
+        }`}
       >
-        {isChecked && !indeterminate && <div className="checkbox-checkmark" />}
-        {indeterminate && <div className="checkbox-indeterminate-mark" />}
+        <div className="switch-checkmark" />
       </div>
       <Typography>{label}</Typography>
     </div>
   );
 };
 
-Checkbox.propTypes = {
+Switch.propTypes = {
   checked: PropTypes.bool,
-  indeterminate: PropTypes.bool,
   error: PropTypes.bool,
   disabled: PropTypes.bool,
   label: PropTypes.string,
   onChange: PropTypes.func,
 };
 
-Checkbox.defaultProps = {
+Switch.defaultProps = {
   label: "",
   error: false,
   indeterminate: false,
